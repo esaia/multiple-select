@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Option from "./Option";
+import style from "./main.module.css";
 function App() {
+  interface optionsType {
+    label: String;
+    value: any;
+  }
+
+  const options: optionsType[] = [
+    { label: "First", value: 1 },
+    { label: "Second", value: 2 },
+    { label: "Third", value: 3 },
+    { label: "Fourth", value: 4 },
+    { label: "Fifth", value: 5 },
+  ];
+
+  const [value, setValue] = useState<optionsType | undefined>(options[0]);
+
+  const [selectedArray, setSelectedArray] = useState<optionsType[] | undefined>(
+    []
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={style.mainContainer}>
+      <Option
+        options={options}
+        value={value}
+        onChange={(v) => setValue(v)}
+        isMultiple={true}
+        selectedArray={selectedArray}
+        clearSelectedArr={() => setSelectedArray([])}
+      />
     </div>
   );
 }

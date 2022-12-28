@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  min-height: 4em;
+  border: 0.2em solid #333;
+  border-radius: 0.6em;
+  display: flex;
+  align-items: center;
+  width: 800px;
+  cursor: pointer;
+}
+
+.value {
+  flex-grow: 1;
+}
+
+.valuearr {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.valuearritem {
+  background-color: antiquewhite;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.5em;
+  margin: 0.3em;
+}
+.clearBTN,
+.openBTN {
+  cursor: pointer;
+  font-size: 2rem;
+  width: 20px;
+  margin: 0.2em;
+}
+
+.myOptions {
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 0.5em);
+  border: 0.2em solid #333;
+  border-radius: 0.3em;
+  z-index: 100;
+}
+
+.hided {
+  display: none;
+}
+
+.option {
+  padding: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+}
+
+.selectedOption {
+  background-color: aqua;
+}
+
+.optionHover {
+  background-color: beige;
+}
