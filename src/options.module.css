@@ -11,7 +11,8 @@
   border-radius: 0.6em;
   display: flex;
   align-items: center;
-  width: 800px;
+  width: 100%;
+  max-width: 500px;
   cursor: pointer;
 }
 
